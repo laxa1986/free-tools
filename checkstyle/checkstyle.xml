@@ -53,8 +53,8 @@ https://checkstyle.sourceforge.io/checks.html
 
   <!-- https://checkstyle.org/filters/suppressionfilter.html -->
   <module name="SuppressionFilter">
-    <property name="file" value="${org.checkstyle.google.suppressionfilter.config}" default="checkstyle-suppressions.xml"/>
-    <property name="optional" value="true"/>
+    <property name="file" value="reference-api/checkstyle-suppressions.xml"/>
+    <property name="optional" value="false"/>
   </module>
 
   <module name="Translation" />
@@ -68,6 +68,7 @@ https://checkstyle.sourceforge.io/checks.html
       <property name="tokens"
                 value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF, ANNOTATION_FIELD_DEF, PARAMETER_DEF,
                  VARIABLE_DEF, METHOD_DEF, PATTERN_VARIABLE_DEF, RECORD_DEF, RECORD_COMPONENT_DEF"/>
+      <property name="allowedAbbreviations" value="IT" /> <!-- used for integration tests -->
     </module>
 
     <module name="AbstractClassName">
@@ -472,7 +473,7 @@ https://checkstyle.sourceforge.io/checks.html
 
     <module name="RedundantModifier" />
 
-    <module name="Regexp" />
+    <!--    <module name="Regexp" />--> <!-- doesn't make sense w/o configuration -->
 
     <module name="RegexpSinglelineJava" />
 

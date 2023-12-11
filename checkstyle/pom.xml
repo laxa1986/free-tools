@@ -21,6 +21,7 @@
                     <consoleOutput>true</consoleOutput>
                     <violationSeverity>warning</violationSeverity>
                     <failsOnError>true</failsOnError>
+                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
                 </configuration>
                 <executions>
                     <execution>
