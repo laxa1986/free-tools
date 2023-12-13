@@ -612,7 +612,9 @@ https://checkstyle.sourceforge.io/checks.html
 
     <module name="VisibilityModifier" />
 
-    <module name="WhitespaceAfter" />
+    <module name="WhitespaceAfter">
+      <property name="tokens" value="COMMA, SEMI, LITERAL_IF, LITERAL_ELSE, LITERAL_WHILE, LITERAL_DO, LITERAL_FOR, DO_WHILE" />
+    </module>
 
     <module name="WhitespaceAround">
       <property name="allowEmptyConstructors" value="true"/>

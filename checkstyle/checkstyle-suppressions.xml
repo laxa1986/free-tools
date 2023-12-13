@@ -7,4 +7,6 @@
 <suppressions>
     <!-- it is common to have string literal duplicates in tests -->
     <suppress checks="MultipleStringLiterals" files="src/test/java/.*" />
+    <!-- it is common to have protected fields in tests -->
+    <suppress checks="VisibilityModifier" files="src/test/java/.*" />
 </suppressions>
