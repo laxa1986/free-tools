@@ -109,7 +109,7 @@ https://checkstyle.sourceforge.io/checks.html
       <property name="allowNonPrintableEscapes" value="true"/>
     </module>
 
-    <module name="AvoidInlineConditionals" />
+    <!-- <module name="AvoidInlineConditionals" /> --> <!-- inline conditionals are fine -->
 
     <module name="AvoidNestedBlocks" />
 
@@ -206,7 +206,9 @@ https://checkstyle.sourceforge.io/checks.html
       <message key="ws.notPreceded" value="GenericWhitespace ''{0}'' is not preceded with whitespace."/>
     </module>
 
-    <module name="HiddenField" />
+    <module name="HiddenField">
+      <property name="ignoreConstructorParameter" value="true"/>
+    </module>
 
     <!--    <module name="HideUtilityClassConstructor" />-->
 
