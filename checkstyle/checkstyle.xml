@@ -53,7 +53,7 @@ https://checkstyle.sourceforge.io/checks.html
 
   <!-- https://checkstyle.org/filters/suppressionfilter.html -->
   <module name="SuppressionFilter">
-    <property name="file" value="reference-api/checkstyle-suppressions.xml"/>
+<!--    <property name="file" value="reference-api/checkstyle-suppressions.xml"/>-->
     <property name="optional" value="false"/>
   </module>
 
