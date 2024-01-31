@@ -22,11 +22,11 @@
                     <violationSeverity>warning</violationSeverity>
                     <failsOnError>true</failsOnError>
                     <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                    <sourceDirectories>${project.build.sourceDirectory}</sourceDirectories>
                 </configuration>
                 <executions>
                     <execution>
-                        <id>validate</id>
-                        <phase>validate</phase>
+                        <phase>verify</phase><!-- keep in verify phase to quickly iterate during development -->
                         <goals>
                             <goal>check</goal>
                         </goals>
