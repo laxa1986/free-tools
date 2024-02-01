@@ -352,9 +352,9 @@ https://checkstyle.sourceforge.io/checks.html
 
     <module name="MissingJavadocPackage" />
 
-    <module name="MissingJavadocType">
-      <property name="tokens" value="INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF"/>
-    </module>
+    <!-- Among all types interfaces are really the ones who should hava javadocs,
+         but even interfaces sometimes is so much self-exploratory, that such rule just forces you to write a dumb thing -->
+    <!-- <module name="MissingJavadocType" /> -->
 
     <module name="MissingOverride" />
 
