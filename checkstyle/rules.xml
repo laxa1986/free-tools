@@ -23,7 +23,8 @@ https://checkstyle.sourceforge.io/checks.html
 
   <module name="Header" />
 
-  <!--  <module name="JavadocPackage" />-->
+  <!-- Checks that each Java package has a Javadoc file used for commenting -->
+  <!-- <module name="JavadocPackage" />-->
 
   <module name="LineLength">
     <property name="fileExtensions" value="java"/>
@@ -51,12 +52,6 @@ https://checkstyle.sourceforge.io/checks.html
 
   <module name="RegexpSingleline" />
 
-  <!-- https://checkstyle.org/filters/suppressionfilter.html -->
-<!--  <module name="SuppressionFilter">-->
-<!--    <property name="file" value="reference-api/checkstyle-suppressions.xml"/>-->
-<!--    <property name="optional" value="false"/>-->
-<!--  </module>-->
-
   <module name="Translation" />
 
   <module name="UniqueProperties" />
@@ -72,9 +67,7 @@ https://checkstyle.sourceforge.io/checks.html
     </module>
 
     <!-- abstract classes can have any name -->
-    <!--    <module name="AbstractClassName">-->
-    <!--      <property name="format" value="^(Abstract)|(Base).+$" />-->
-    <!--    </module>-->
+    <!-- <module name="AbstractClassName" />-->
 
     <module name="AnnotationLocation">
       <property name="id" value="AnnotationLocationMostCases"/>
@@ -87,7 +80,8 @@ https://checkstyle.sourceforge.io/checks.html
       <property name="allowSamelineMultipleAnnotations" value="true"/>
     </module>
 
-    <!--    <module name="AnnotationOnSameLine " />-->
+    <!-- Annotations are fine to be not on the same line -->
+    <!-- <module name="AnnotationOnSameLine " />-->
 
     <module name="AnnotationUseStyle " />
 
@@ -110,7 +104,8 @@ https://checkstyle.sourceforge.io/checks.html
       <property name="allowNonPrintableEscapes" value="true"/>
     </module>
 
-    <!-- <module name="AvoidInlineConditionals" /> --> <!-- inline conditionals are fine -->
+    <!-- inline conditionals are fine -->
+    <!-- <module name="AvoidInlineConditionals" /> -->
 
     <module name="AvoidNestedBlocks" />
 
@@ -118,7 +113,7 @@ https://checkstyle.sourceforge.io/checks.html
 
     <module name="AvoidStarImport" />
 
-    <!--    <module name="AvoidStaticImport" />-->
+    <module name="AvoidStaticImport" />
 
     <module name="BooleanExpressionComplexity" />
 
@@ -160,7 +155,7 @@ https://checkstyle.sourceforge.io/checks.html
 
     <module name="DescendantToken" />
 
-    <!--    <module name="DesignForExtension" />-->
+    <!-- <module name="DesignForExtension" />-->
 
     <module name="EmptyBlock">
       <property name="option" value="TEXT"/>
@@ -196,9 +191,11 @@ https://checkstyle.sourceforge.io/checks.html
 
     <module name="FinalClass" />
 
-    <!--    <module name="FinalLocalVariable" />-->
+    <!-- final keyword local variables now replaced with Lombok 'val' -->
+    <!-- <module name="FinalLocalVariable" />-->
 
-    <!--    <module name="FinalParameters" />-->
+    <!-- final parameters are not necessary, better to have rule that prohibits reassigning then have all params 'final' -->
+    <!-- <module name="FinalParameters" />-->
 
     <module name="GenericWhitespace">
       <message key="ws.followed" value="GenericWhitespace ''{0}'' is followed by whitespace."/>
@@ -209,7 +206,8 @@ https://checkstyle.sourceforge.io/checks.html
 
     <module name="HiddenField" />
 
-    <!--    <module name="HideUtilityClassConstructor" />-->
+    <!-- this rule demands explicit private constructor, but Lombok @UtilityClass works better  -->
+    <!-- <module name="HideUtilityClassConstructor" />-->
 
     <module name="IllegalCatch" />
 
@@ -231,9 +229,11 @@ https://checkstyle.sourceforge.io/checks.html
 
     <module name="IllegalType" />
 
-    <!--    <module name="ImportControl" />--> <!-- causes error `Cannot invoke "java.net.URI.toString()" because "this.file" is null` -->
+    <!-- causes error `Cannot invoke "java.net.URI.toString()" because "this.file" is null` -->
+    <!-- <module name="ImportControl" />-->
 
-    <!--    <module name="ImportOrder" />--> <!-- CustomImportOrder is used instead -->
+    <!-- CustomImportOrder is used instead -->
+    <!-- <module name="ImportOrder" />-->
 
     <module name="Indentation">
       <property name="basicOffset" value="4"/>
@@ -285,7 +285,8 @@ https://checkstyle.sourceforge.io/checks.html
 
     <module name="JavadocType" />
 
-    <!--    <module name="JavadocVariable" />-->
+    <!-- just an overkill -->
+    <!-- <module name="JavadocVariable" />-->
 
     <module name="JavaNCSS" />
 
@@ -340,24 +341,19 @@ https://checkstyle.sourceforge.io/checks.html
       <message key="name.invalidPattern" value="Method type name ''{0}'' must match pattern ''{1}''."/>
     </module>
 
-    <!--    <module name="MissingCtor" />--> <!-- handled by lombock -->
+    <!-- Check that classes have explicit constructor. Better handled by Lombok -->
+    <!-- <module name="MissingCtor" />-->
 
     <module name="MissingDeprecated" />
 
-    <!--    <module name="MissingJavadocMethod">-->
-    <!--      <property name="scope" value="public"/>-->
-    <!--      <property name="minLineCount" value="2"/>-->
-    <!--      <property name="allowedAnnotations" value="Override, Test"/>-->
-    <!--      <property name="tokens" value="METHOD_DEF, CTOR_DEF, ANNOTATION_FIELD_DEF, COMPACT_CTOR_DEF"/>-->
-    <!--    </module>-->
+    <!-- Typically only interfaces and interface methods need javadocs -->
+    <!-- <module name="MissingJavadocMethod" />-->
 
     <module name="MissingJavadocPackage" />
 
-    <!--    <module name="MissingJavadocType">-->
-    <!--      <property name="scope" value="protected"/>-->
-    <!--      <property name="tokens" value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, RECORD_DEF, ANNOTATION_DEF"/>-->
-    <!--      <property name="excludeScope" value="nothing"/>-->
-    <!--    </module>-->
+    <module name="MissingJavadocType">
+      <property name="tokens" value="INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF"/>
+    </module>
 
     <module name="MissingOverride" />
 
@@ -476,7 +472,8 @@ https://checkstyle.sourceforge.io/checks.html
 
     <module name="RedundantModifier" />
 
-    <!--    <module name="Regexp" />--> <!-- doesn't make sense w/o configuration -->
+    <!-- uncomment when needed -->
+    <!-- <module name="Regexp" />-->
 
     <module name="RegexpSinglelineJava" />
 
@@ -587,7 +584,8 @@ https://checkstyle.sourceforge.io/checks.html
 
     <module name="TodoComment" />
 
-    <!--    <module name="TrailingComment" />-->
+    <!-- small trailing comments are fine -->
+    <!-- <module name="TrailingComment" />-->
 
     <module name="TypecastParenPad" />
 
@@ -596,7 +594,8 @@ https://checkstyle.sourceforge.io/checks.html
       <message key="name.invalidPattern" value="Type name ''{0}'' must match pattern ''{1}''."/>
     </module>
 
-    <!--    <module name="UncommentedMain" />-->
+    <!-- this aims to find unproperly used public static main, but every app has it for spring boot -->
+    <!-- <module name="UncommentedMain" />-->
 
     <module name="UnnecessaryParentheses" />
 
@@ -640,7 +639,8 @@ https://checkstyle.sourceforge.io/checks.html
       <message key="ws.notPreceded" value="WhitespaceAround: ''{0}'' is not preceded with whitespace."/>
     </module>
 
-    <!--    <module name="WriteTag" />-->
+    <!-- allows use of "@since" tag for example. useful for libraries -->
+    <!-- <module name="WriteTag" />-->
 
   </module>
 </module>
