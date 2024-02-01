@@ -17,12 +17,15 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>${checkstyle.version}</version>
                 <configuration>
-                    <configLocation>checkstyle.xml</configLocation>
+<!--                    <configLocation>checkstyle-rules.debug.xml</configLocation>-->
+<!--                    <suppressionsLocation>checkstyle-suppressions.debug.xml</suppressionsLocation>-->
+                    <configLocation>https://raw.githubusercontent.com/laxa1986/free-tools/v1.0.1/checkstyle/rules.xml</configLocation>
+                    <suppressionsLocation>https://raw.githubusercontent.com/laxa1986/free-tools/v1.0.1/checkstyle/common-suppressions.xml</suppressionsLocation>
                     <consoleOutput>true</consoleOutput>
+                    <excludeGeneratedSources>true</excludeGeneratedSources>
                     <violationSeverity>warning</violationSeverity>
                     <failsOnError>true</failsOnError>
                     <includeTestSourceDirectory>true</includeTestSourceDirectory>
-                    <sourceDirectories>${project.build.sourceDirectory}</sourceDirectories>
                 </configuration>
                 <executions>
                     <execution>
@@ -35,22 +38,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${checkstyle.version}</version>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>checkstyle</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
-        </plugins>
-    </reporting>
 
 </project>
