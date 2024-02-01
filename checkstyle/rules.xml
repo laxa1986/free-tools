@@ -113,7 +113,8 @@ https://checkstyle.sourceforge.io/checks.html
 
     <module name="AvoidStarImport" />
 
-    <module name="AvoidStaticImport" />
+    <!-- static imports are fine -->
+    <!-- <module name="AvoidStaticImport" /> -->
 
     <module name="BooleanExpressionComplexity" />
 
