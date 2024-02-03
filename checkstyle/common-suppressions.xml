@@ -9,4 +9,6 @@
     <suppress checks="MultipleStringLiterals" files="src/test/java/.*" />
     <!-- it is common to have protected fields in tests -->
     <suppress checks="VisibilityModifier" files="src/test/java/.*" />
+    <!-- it is common to have magic numbers in tests -->
+    <suppress checks="MagicNumber" files="src/test/java/.*" />
 </suppressions>
