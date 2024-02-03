@@ -205,7 +205,9 @@ https://checkstyle.sourceforge.io/checks.html
       <message key="ws.notPreceded" value="GenericWhitespace ''{0}'' is not preceded with whitespace."/>
     </module>
 
-    <module name="HiddenField" />
+    <module name="HiddenField">
+      <property name="ignoreConstructorParameter" value="true"/>
+    </module>
 
     <!-- this rule demands explicit private constructor, but Lombok @UtilityClass works better  -->
     <!-- <module name="HideUtilityClassConstructor" />-->

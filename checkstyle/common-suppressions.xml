@@ -11,4 +11,10 @@
     <suppress checks="VisibilityModifier" files="src/test/java/.*" />
     <!-- it is common to have magic numbers in tests -->
     <suppress checks="MagicNumber" files="src/test/java/.*" />
+    <!-- it is common to have multiple top level classes in tests -->
+    <suppress checks="OneTopLevelClass" files="src/test/java/.*" />
+    <!-- tests often have @Nested classes which used for grouping, not as normal nested classes -->
+    <suppress checks="InnerTypeLast" files="src/test/java/.*" />
+    <!-- some tests define more than one class in a file -->
+    <suppress checks="OuterTypeNumber" files="src/test/java/.*" />
 </suppressions>
