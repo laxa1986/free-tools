@@ -583,7 +583,9 @@ https://checkstyle.sourceforge.io/checks.html
 
     <module name="ThrowsCount" />
 
-    <module name="TodoComment" />
+    <!-- prohibits "T0DO:" comments. Often you need them -->
+    <!-- Alternatively could have allowed T0DO: JIRA-123, but it also quite strict as ticket format can vary -->
+    <!-- <module name="TodoComment" /> -->
 
     <!-- small trailing comments are fine -->
     <!-- <module name="TrailingComment" />-->
