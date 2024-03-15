@@ -127,7 +127,8 @@ https://checkstyle.sourceforge.io/checks.html
 
     <module name="ClassFanOutComplexity" />
 
-    <module name="ClassMemberImpliedModifier" />
+    <!-- no need to specify 'static' modifier on nested interfaces/records -->
+    <!-- <module name="ClassMemberImpliedModifier" /> -->
 
     <module name="ClassTypeParameterName">
       <property name="format" value="(^[A-Z][0-9]?)$|([A-Z][a-zA-Z0-9]*[T]$)"/>
