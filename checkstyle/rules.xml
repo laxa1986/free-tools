@@ -342,9 +342,11 @@ https://checkstyle.sourceforge.io/checks.html
       <property name="tokens" value="CTOR_DEF, LITERAL_NEW, METHOD_CALL, METHOD_DEF, SUPER_CTOR_CALL, ENUM_CONSTANT_DEF, RECORD_DEF"/>
     </module>
 
+    <!-- all we can say is that generic should start from capital latter, hard to make it more specific
+     so all DBType, TStructure should be allowed -->
     <module name="MethodTypeParameterName">
-      <property name="format" value="(^[A-Z][0-9]?)$|([A-Z][a-zA-Z0-9]*[T]$)"/>
-      <message key="name.invalidPattern" value="Method type name ''{0}'' must match pattern ''{1}''."/>
+      <property name="format" value="^[A-Z].*$"/>
+      <message key="name.invalidPattern" value="Class type name ''{0}'' must match pattern ''{1}''."/>
     </module>
 
     <!-- Check that classes have explicit constructor. Better handled by Lombok -->
